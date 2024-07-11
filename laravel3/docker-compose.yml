@@ -1,0 +1,36 @@
+services:
+  laravel3:
+    container_name: laravel3
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - web
+    labels:
+      - "traefik.enable=false"
+
+  server3:
+    image: nginx:alpine
+    container_name: server3
+    ports:
+      - "8083:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.serve3.rule=Host(`laravel3.home.com`)"
+      - "traefik.http.routers.serve3.entrypoints=https"
+      - "traefik.http.routers.serve3.tls=true"
+      - "traefik.http.routers.serve3.service=serve3@docker"
+      - "traefik.http.services.serve3.loadbalancer.server.port=80"
+    depends_on:
+      - laravel3
+
+networks:
+  web:
+    external: true

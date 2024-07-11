@@ -1,0 +1,7 @@
+/vendor/
+/**/vendor/
+*.pem
+/.env
+/.idea
+/.vscode
+/.DS_Store
