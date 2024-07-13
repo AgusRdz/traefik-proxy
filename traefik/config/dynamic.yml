@@ -1,16 +1,10 @@
 tls:
   certificates:
-    - certFile: "/etc/certs/traefik.home.com.pem"
-      keyFile: "/etc/certs/traefik.home.com-key.pem"
+    - certFile: "/etc/certs/_wildcard.home.com.pem"
+      keyFile: "/etc/certs/_wildcard.home.com-key.pem"
 
-    - certFile: "/etc/certs/whoami.home.com.pem"
-      keyFile: "/etc/certs/whoami.home.com-key.pem"
+    - certFile: "/etc/certs/_wildcard.site.com.pem"
+      keyFile: "/etc/certs/_wildcard.site.com-key.pem"
 
-    - certFile: "/etc/certs/laravel1.home.com.pem"
-      keyFile: "/etc/certs/laravel1.home.com-key.pem"
-
-    - certFile: "/etc/certs/laravel2.home.com.pem"
-      keyFile: "/etc/certs/laravel2.home.com-key.pem"
-
-    - certFile: "/etc/certs/laravel3.home.com.pem"
-      keyFile: "/etc/certs/laravel3.home.com-key.pem"
+    - certFile: "/etc/certs/_wildcard.local.com.pem"
+      keyFile: "/etc/certs/_wildcard.local.com-key.pem"

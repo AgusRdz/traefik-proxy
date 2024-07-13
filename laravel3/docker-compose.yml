@@ -23,11 +23,11 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.serve3.rule=Host(`laravel3.home.com`)"
-      - "traefik.http.routers.serve3.entrypoints=https"
-      - "traefik.http.routers.serve3.tls=true"
-      - "traefik.http.routers.serve3.service=serve3@docker"
-      - "traefik.http.services.serve3.loadbalancer.server.port=80"
+      - "traefik.http.routers.server3.rule=Host(`laravel3.local.com`)"
+      - "traefik.http.routers.server3.entrypoints=https"
+      - "traefik.http.routers.server3.tls=true"
+      - "traefik.http.routers.server3.service=server3@docker"
+      - "traefik.http.services.server3.loadbalancer.server.port=80"
     depends_on:
       - laravel3
 

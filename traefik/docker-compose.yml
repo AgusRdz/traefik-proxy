@@ -1,7 +1,7 @@
 services:
   mkcert:
     environment:
-      - domain=traefik.home.com,whoami.home.com,laravel1.home.com,laravel2.home.com,laravel3.home.com
+      - domain=*.home.com,*.site.com,*.local.com
     container_name: mkcert
     volumes:
         - ./certs/:/root/.local/share/mkcert

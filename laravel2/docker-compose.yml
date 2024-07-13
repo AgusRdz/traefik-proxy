@@ -23,7 +23,7 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.server2.rule=Host(`laravel2.home.com`)"
+      - "traefik.http.routers.server2.rule=Host(`laravel2.site.com`)"
       - "traefik.http.routers.server2.entrypoints=https"
       - "traefik.http.routers.server2.tls=true"
       - "traefik.http.routers.server2.service=server2@docker"
